@@ -1,0 +1,5 @@
+aiohttp
+
+telethon>=1.16.4
+cryptg
+python-dotenv
