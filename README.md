@@ -1,21 +1,8 @@
-# Telegram Index
+# Teledax Api
 
-### [Here is Official Repo](https://github.com/odysseusmax/tg-index)
-
-> Telegram indexes a telegram channel(or a chat) and serves its files for download.
+## [Check Official Repo ](https://github.com/odysseusmax/tg-index)
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](.) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-
-## Highlights
-
-- Index one or more telegram channels/chats.
-- View messages and media files on the browser.
-- Search through the channel/chat.
-- Download media files through browser/download managers.
-
-## Demo
-
-Hosted demo site: https://tg-index-demo.herokuapp.com
 
 ## Deploy Guide
 
