@@ -69,13 +69,13 @@ $ python3 -m app
 
 - **Other quick methods.**
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/odysseusmax/tg-index/tree/master) [![Run on Repl.it](https://repl.it/badge/github/odysseusmax/tg-index)](https://repl.it/github/odysseusmax/tg-index)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/aryanvikash/teledaxApi/tree/master) [![Run on Repl.it](https://repl.it/badge/github/aryanvikash/teledaxApi)](https://repl.it/github/aryanvikash/teledaxApi)
 
 ## Contributions
 
 Contributions are welcome.
 
-## Credit
+## Credit ❤️
 
 original repo is created by [@odysseusmax](https://tx.me/odysseusmax).
 
