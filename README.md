@@ -75,9 +75,9 @@ $ python3 -m app
 
 Contributions are welcome.
 
-## Contact
+## Credit
 
-You can contact me [@odysseusmax](https://tx.me/odysseusmax).
+original repo is created by [@odysseusmax](https://tx.me/odysseusmax).
 
 ## License
 
