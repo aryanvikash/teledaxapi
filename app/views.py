@@ -88,7 +88,7 @@ class Views:
                 'no': offset_val
             }
 
-        if len(messages) == 20:
+        if len(messages) == 100:
             query = {'page': offset_val + 2}
             if search_query:
                 query.update({'search': search_query})
