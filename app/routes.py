@@ -14,7 +14,8 @@ def generate_alias_id(chat):
     chat_id = chat.id
     title = chat.title
     while True:
-        alias_id = ''.join([random.choice(string.ascii_letters + string.digits) for _ in range(len(str(chat_id)))])
+        alias_id = ''.join([random.choice(
+            string.ascii_letters + string.digits) for _ in range(len(str(chat_id)))])
         if alias_id in alias_ids:
             continue
         alias_ids.append(alias_id)
@@ -29,8 +30,9 @@ def generate_alias_id(chat):
 async def setup_routes(app, handler):
     h = handler
     client = h.client
-    routes =  [
-        web.get('/', h.home, name='home')
+    routes = [
+        web.get("/", h.getHome, name='getHome'),
+        web.post('/', h.home, name='home')
     ]
     index_all = index_settings['index_all']
     index_private = index_settings['index_private']
@@ -43,7 +45,7 @@ async def setup_routes(app, handler):
             alias_id = None
             if chat.id in exclude_chats:
                 continue
-            
+
             if chat.is_user:
                 if index_private:
                     alias_id = generate_alias_id(chat)
@@ -53,10 +55,10 @@ async def setup_routes(app, handler):
             else:
                 if index_channel:
                     alias_id = generate_alias_id(chat)
-            
+
             if not alias_id:
                 continue
-            
+
             p = f"/{alias_id}"
             r = [
                 web.get(p, h.index),
@@ -68,7 +70,8 @@ async def setup_routes(app, handler):
                 web.head(p + r"/{id:\d+}/thumbnail", h.thumbnail_head),
             ]
             routes += r
-            log.debug(f"Index added for {chat.id} :: {chat.title} at /{alias_id}")
+            log.debug(
+                f"Index added for {chat.id} :: {chat.title} at /{alias_id}")
     else:
         for chat_id in include_chats:
             chat = await client.get_entity(chat_id)
@@ -84,5 +87,6 @@ async def setup_routes(app, handler):
                 web.head(p + r"/{id:\d+}/thumbnail", h.thumbnail_head),
             ]
             routes += r
-            log.debug(f"Index added for {chat.id} :: {chat.title} at /{alias_id}")
+            log.debug(
+                f"Index added for {chat.id} :: {chat.title} at /{alias_id}")
     app.add_routes(routes)

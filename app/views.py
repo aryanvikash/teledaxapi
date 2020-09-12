@@ -5,7 +5,7 @@ import logging
 from aiohttp import web
 from telethon.tl import types
 
-from .config import chat_ids
+from .config import chat_ids, privatekey
 from .util import get_file_name, get_human_size
 
 log = logging.getLogger(__name__)
@@ -21,14 +21,31 @@ class Views:
     def __init__(self, client):
         self.client = client
 
+    #on get request "/"
+    async def getHome(self, req):
+        return web.json_response({"auth": "not authorised user", "status": "active"})
+
+    # on post request "/"
     async def home(self, req):
-        chats = []
-        for chat in chat_ids:
-            chats.append({
-                'id': chat['alias_id'],
-                'name': chat['title']
-            })
-        return web.json_response({'chats': chats})
+        if privatekey is not None:
+            try:
+                # TODO add more filters like check specfic user-agents
+                if req.headers["privatekey"] == privatekey:
+                    chats = []
+                    for chat in chat_ids:
+                        chats.append({
+                            'id': chat['alias_id'],
+                            'name': chat['title']
+                        })
+                    return web.json_response({'chats': chats})
+                else:
+                    return web.Response(text="not authorized")
+            except KeyError:
+                return web.Response(text="not authorized")
+        else:
+            # we can also make it optional
+            return web.Response(text="not authorized")
+
 
     async def index(self, req):
         alias_id = req.rel_url.path.split('/')[1]
@@ -88,7 +105,7 @@ class Views:
                 'no': offset_val
             }
 
-        if len(messages) == 20:
+        if len(messages) == 100:
             query = {'page': offset_val + 2}
             if search_query:
                 query.update({'search': search_query})

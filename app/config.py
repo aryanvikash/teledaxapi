@@ -4,7 +4,8 @@ import sys
 import os
 from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
+
 
 try:
     port = int(os.environ.get("PORT", "8080"))
@@ -13,6 +14,12 @@ except ValueError:
 if not 1 <= port <= 65535:
     print("Please make sure the PORT environment variable is an integer between 1 and 65535")
     sys.exit(1)
+
+try:
+    privatekey = os.environ.get("PRIVATEKEY", None)
+except:
+    print("Api unsecure use private ")
+
 
 try:
     api_id = int(os.environ["API_ID"])
@@ -25,8 +32,9 @@ except (KeyError, ValueError):
 
 try:
 
-    index_settings_str = os.environ["INDEX_SETTINGS"].strip()
-    print(index_settings_str)
+    index_settings_str = os.environ.get("INDEX_SETTINGS")
+
+    index_settings_str = index_settings_str.replace("'", '"')
     index_settings = json.loads(index_settings_str)
     '''
     {"index_all": true, "index_private":false, "index_group": false,

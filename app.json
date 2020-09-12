@@ -1,7 +1,7 @@
 {
-    "name":"Telegram Index",
-    "description":"Python Web App which indexes a telegram channel(or a chat) and serves its files for download.",
-    "repository":"https://github.com/odysseusmax/tg-index",
+    "name":"Teledax Api",
+    "description":"Teledax Api which indexes a telegram channel(or a chat) and serves its files for download and play.",
+    "repository":"https://github.com/aryanvikash/teledaxapi",
     "success_url":"/",
     "env":{
         "API_ID":{
@@ -19,6 +19,11 @@
         "SESSION_STRING":{
             "description":"Your session string.",
             "value":""
+        },
+        "PRIVATEKEY": {
+            "description":"Here is your password(leave it blank if you don't want any password in api)",
+            "value":"",
+            "required": true
         },
         "DEBUG":{
             "description":"Give some value to set logging level to debug.",
