@@ -73,7 +73,7 @@ $ python3 -m app
 
 - **Other quick methods.**
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/aryanvikash/teledaxApi/tree/master) [![Run on Repl.it](https://repl.it/badge/github/aryanvikash/teledaxApi)](https://repl.it/github/aryanvikash/teledaxApi)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/aryanvikash/teledaxApi/tree/auth) [![Run on Repl.it](https://repl.it/badge/github/aryanvikash/teledaxApi)](https://repl.it/github/aryanvikash/teledaxApi)
 
 ## Contributions
 
