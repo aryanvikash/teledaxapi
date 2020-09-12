@@ -1,16 +1,18 @@
 # Teledax Api
 
-## [Check Official Repo ](https://github.com/odysseusmax/tg-index)
+## [ Check Official Repo + Web Version ](https://github.com/odysseusmax/tg-index)
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](.) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+
+[![](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.tele.dax)
 
 ## Deploy Guide
 
 - **Clone to local machine.**
 
 ```bash
-$ git clone https://github.com/odysseusmax/tg-index.git
-$ cd tg-index
+$ git clone https://github.com/aryanvikash/teledaxapi.git
+$ cd teledaxapi
 ```
 
 - **Create and activate virtual environment.**
@@ -35,6 +37,8 @@ $ pip3 install -U -r requirements.txt
 | `API_HASH` (required)       | Telegram api_hash obtained from https://my.telegram.org/apps.                                                                                                  |
 | `INDEX_SETTINGS` (required) | See the below description.                                                                                                                                     |
 | `SESSION_STRING` (required) | String obtained by running `$ python3 app/generate_session_string.py`. (Login with the telegram account which is a participant of the given channel (or chat). |
+
+
 | `PORT` (optional)           | Port on which app should listen to, defaults to 8080.                                                                                                          |
 | `HOST` (optional)           | Host name on which app should listen to, defaults to 0.0.0.0.                                                                                                  |
 | `DEBUG` (optional)          | Give some value to set logging level to debug, info by default.                                                                                                |
