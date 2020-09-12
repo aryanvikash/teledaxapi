@@ -11,8 +11,8 @@
 - **Clone to local machine.**
 
 ```bash
-$ git clone https://github.com/odysseusmax/tg-index.git
-$ cd tg-index
+$ git clone https://github.com/aryanvikash/teledaxapi.git
+$ cd teledaxapi
 ```
 
 - **Create and activate virtual environment.**
